@@ -1,0 +1,6 @@
+Extra Ammunition
+
+This gives you extra ammo for both your
+primary and secondary weapons, allowing you to
+worry less about how much ammo you're using
+fending off the enemy.

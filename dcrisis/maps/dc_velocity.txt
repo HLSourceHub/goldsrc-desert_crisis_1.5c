@@ -1,0 +1,17 @@
+This is a small team deathmatch map. It is best
+with 4-8. This is a map set on an UP-KO anti-grav
+propelled supply train headed towards a base in the
+desert. USA is trying to hijack it.
+
+Objectives: Kill the people that don't look like
+you. :D
+
+This map is played in rounds (the players become spectators
+when they die 3 times, they are spectators until the round 
+restarts).
+
+dc_velocity
+Map by LPlasma
+Entities by LPlasma
+Terrain by LPlasma
+Textures by LPlasma, Valve, and the DC staff

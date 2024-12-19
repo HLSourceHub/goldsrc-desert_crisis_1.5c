@@ -1,0 +1,4 @@
+The objective in this map is to turn on the fuel, power, upload the software, select a target,
+and then to launch the missile. Yet the target of the nuke can be changed in the time it takes
+for the weapon to be launched, so your team must be wary of the progress and location of the other
+team.

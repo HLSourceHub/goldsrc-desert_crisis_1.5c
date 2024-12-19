@@ -1,0 +1,14 @@
+Franchi Spas 12
+
+Ammo Capacity: 8 Shells
+Rate of Fire: ~60 RPM
+Damage: Ranged
+
+The Franchi Spas is the good ol' shotgun. 
+Changing the firing mode will switch to 
+a braced mode. The gun fires a slightly 
+smaller spread while braced but has a
+longer wait between shots.
+
+For the Spas 12 to do considerable damage,
+one needs to relatively close to his victim.

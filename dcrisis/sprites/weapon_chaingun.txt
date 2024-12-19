@@ -1,0 +1,9 @@
+// de
+
+6	// number of sprites
+weapon			640 chaingun	0	0	176	48
+weapon_s		640 chaingun	0	0	176	48
+ammo			640 640hud7	0	72	24	24
+ammo2			640 640hud7	48	72	24	24
+crosshair		640 crosshairs	0	48	24	24
+autoaim			640 crosshairs	48	72	24	24

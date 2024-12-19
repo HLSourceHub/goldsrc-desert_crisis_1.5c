@@ -1,0 +1,11 @@
+Electric Sledge Hammer
+
+Damage: High
+
+Great for bashing heads or other valuable 
+pieces of equipment, this sledge hammer's 
+high electical charge increases the damage 
+it inflicts. It is the stongest weapon in 
+hand-to-hand combat; however, its weight 
+makes it slower than all the other melee 
+weapons.

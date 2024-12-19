@@ -1,0 +1,7 @@
+// de
+
+2	// number of sprites
+weapon			640 python	0	0	176	48
+weapon_s		640 python	0	0	176	48
+
+

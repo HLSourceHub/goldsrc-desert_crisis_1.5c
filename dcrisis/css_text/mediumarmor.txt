@@ -1,0 +1,14 @@
+Medium Armor
+
+Protection: Good
+Speed: Medium
+
+Restrictions:
+-No Wootastic
+
+Beyond more basic armor, medium provides good
+protection without sacrificing too much
+maneuverability. The best all around style for
+both movement and protection. One can get to
+a battle quickly, take a beating, and keep on
+living in medium armor.

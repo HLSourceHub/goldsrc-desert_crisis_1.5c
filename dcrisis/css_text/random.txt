@@ -1,0 +1,4 @@
+Random Selection
+
+Let the game randomly choose all of your
+equipment for you.

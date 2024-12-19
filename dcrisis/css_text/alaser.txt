@@ -1,0 +1,20 @@
+Akimbo Laser Pistols
+
+Ammo Capacity: 10-12 blasts per charge
+Rate of Fire: Fast, semi-auto
+Damage: Medium-High
+
+The Laser Pistols fire laser blasts, and can 
+be charged by holding the fire button for shots 
+that do more damage. It also doesn't have ammo 
+but a charge bar in place of clips. This gun is 
+reasonably accurate.
+
+Secondary fire will fire both pistols at once 
+but has a slower rate of fire then primary mode.
+
+Changing modes will switch between akimbo and
+a single pistol. Akimbo pistols charge the bar
+faster than a single pistol, but a single pistol 
+has greater accuracy. Both will only
+charge while deployed.

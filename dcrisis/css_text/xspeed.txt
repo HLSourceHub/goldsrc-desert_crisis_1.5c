@@ -1,0 +1,11 @@
+Extra Speed
+
+Bonuses:
+-Extra Adrenaline
+-Better special moves (walljumps, flips)
+
+Restrictions:
+-No Heavy Armor
+-No Chaingun, EM Sniper, Plasma, or Flame
+
+Player move very fast. ZOOM ZOOM!

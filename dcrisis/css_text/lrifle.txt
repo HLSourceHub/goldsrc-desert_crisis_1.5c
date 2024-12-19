@@ -1,0 +1,20 @@
+X-1 Laser Assault Rifle
+
+Ammo Capacity: 20 pulse, or 5 seconds of stream
+Rate of Fire: 600 PPM, or continuous beam
+Damage: Medium
+
+The latest addition to the modern battlefield is
+the X-1 Laser Assault Rifle (or LAR), a multiple 
+purpose assault rifle that doesn't use conventional 
+ammunition. Instead, it uses a high powered laser 
+with devastating consequences.
+
+Primary attack is a laser pulse, doing damage
+to a large area with consecutive laser pulses.
+Switching weapon modes allows the the LAR to fire
+several beams at once in a blast, much like a 
+shotgun.
+
+Secondary attack is a continuous beam that does
+extra damage to your targets head.

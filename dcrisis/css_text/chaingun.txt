@@ -1,0 +1,17 @@
+M61A1 Vulcan Chaingun
+
+Ammo Capacity: 350 Rounds
+Rate of Fire: 2400 RPM
+Damage: Medium
+
+The Minigun: 20mm shells of death being spewed
+at an insane rate. Don't plan on sniping
+anything with this, as it is dreadfully
+inaccurate. This gun was designed with 
+suppressive fire in mind.
+
+Sustained fire will overheat the minigun, 
+causing it to enter a cooldown mode for a
+brief period of time to prevent the barrel
+melting and ammo exploding. There is no
+secondary fire.

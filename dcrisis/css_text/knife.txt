@@ -1,0 +1,13 @@
+Knife
+
+Damage: Low
+
+The standard issue knife of the recent world
+conflicts. It's light and fast, great for
+hitting other fast enemies. Good for both
+slashing and throwing, it's the most versatile
+of the melee weapons.
+
+Secondary attack will throw the knife a good
+distance for a large amount of damage if it
+hits.

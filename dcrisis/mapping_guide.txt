@@ -1,0 +1,837 @@
+Desert Crisis Mapping Guide v0.8
+By Ikkyo (jgripp@budget.net)
+April 8, 2002
+===============================
+
+I. Introduction
+II. Common Fields
+III. Common Tasks
+IV. Implemination Strategies (Tutorials)
+V. FAQ
+VI. Entity Guide
+VII. Weapon classnames
+
+
+
+I. Introduction
+===============
+	The Desert Crisis gameplay system is a very rebust tool that allows a mapper to create huge variety in the gameplay of his maps. No longer will maps be built around some standard type of gameplay, now the mapper can build the gameplay itself around his map.
+	The entities that I have created are what I feel to be the building blocks for creating custom team based gameplay. It allows the teams to actually try and _do_ something, other than just killing the opposing team. Most maps using this will not be team DM (they could still be though), instead the variety in gametypes becomes huge when a mapper is given this many tools with which to work. Do to the modularity of this system, new entities and thus even greater variety can easily be added.
+	The primary features of the objective system is the ability for the different game entities to talk to each other in different ways.
+	There are two methods for communicating, direct triggering and masters. Each has it's uses and limitations. Direct triggering is for active events, while masters play a passive role as to whether game events should happen on not.
+	Direct triggering works the same way it did in regular half-life, but with some added features. Most entities now respond properly to ON/OFF triggers, and all entities that can trigger something else can now issues the different trigger types without the need for a relay.
+	As stated earily, masters provide passive control of almost all of the entities. When a mapper sets the master of an entity to something, everytime it's asked to do something, it will check it's master to see if it is allowed. This calculation is based upon which entity is asking it, a player for instance, and other possible options depending on the entity. Half-life only allowed very few entities to use and function as masters. In Desert Criis, nearly every entity can be affected by setting it's master in some way, from spawn points to func_doors, and many different entities can function as masters. Read the Entity Guide section to find out how each entity behaves.
+	The last important componant is info_objective and the objective string a mapper defines for each team, this functions in basically the same way masters and such do, and tells the round when a certain team has won. Read Common Tasks on how to setup the objective string.
+
+
+II. Common Fields
+=================
+
+Master:
+=======
+
+	This is one of the most powerful and used fields in DC. It is used in that same way as the HL master field, but exists on almost every DC entity and has some incredibly useful advantages. It is no longer just the name of another entity, it is a boolean string, which means that a single entity can look at multiple entities to find if it is active (true/on) for the user of the entity. This is done simply by joining several entities together with AND, OR, ~ (not), some other operators, and parenthese. This is considered boolean logic, and functions the same way.
+
+Example: "(master1 AND master2) OR ~master3", where master1, master2, and master3 are each seperate entities).
+
+These are the different operators you can use:  AND, OR, XOR, CON, NAND, NOR, XNOR, and ~
+
+AND - will only be if both the left and right sides are true
+OR - will be true if either the left or right sides is true
+XOR - will only be true if either the left or right side is true, but not both
+CON - will be true if the left side is false, or both the left and right side is true
+NAND - not AND
+NOR - not OR
+XNOR - not XOR, it is true if the left and right side of the operator are equal
+~ - not (only works on entities)
+
+A single entity can be used several times in the same string.
+	Many different entities can function as masters, including func_buttons, multisource, master_* entities, and others. Look at the entity guide to see how each entity behaves when it is used as a master.
+	Masters generally look at a the entity that is trying to use the entity in question, usally a player. So for instance, if you set the master of a spawn point to an entity that checks the team of a player (master_team or info_team) only players on that team can use that spawn point. This is because when the player asks the spawn point if it is valid, the spawn point checks its boolean master string to see if it evaluates as true. When asking each master in its string for a true/false answer it tells each master who _started_ the question, which in this case is the player wanting to use that spawn point.
+	If an entity doesn't have a specific master functionality (i.e. func_wall), it will ask its own master string whether it will return true or false. This has many useful functions, including making circuit logic with entities.
+
+
+
+New trigger options:
+===================
+
+	There are several new options at allow the direct setting of the state of other entities, instead of just toggling like most HL entities do.
+
+-Delay before trigger: This the the time in seconds before the target will be triggered
+
+-Delay variance: This is the variance (random) time in seconds (+/-) for the delay, this needs to be less than the initial delay
+
+-Trigger State: 4 options (Toggle, Off, On, Set) - This is the type of trigger, different entities act differently depending on which you use
+
+-Set Value: If "Set" is chosen for for the trigger state, this is the value to which the the triggered entity is set
+
+
+Gametype restrictions:
+======================
+
+	All entities have a field to control in which gametypes (dm,lms,teamplay,campaign) they will actually appear.
+
+
+No reset:
+=========
+
+	Any entity with this flag set will not reset with the round, this can be used to save events and have them carry over to the next round.
+
+
+
+
+III. Common Tasks
+================
+
+Setting up the map to work with the CSS:
+========================================
+
+Required Entities:
+info_css x 1
+
+	First make a big black box at least 400 units east to west. Then place the info_css at the west end of the box.
+
+
+
+Setting up the briefing:
+========================
+
+	First write up a different briefing for all teams present on the map, save them as usa.txt and upko.txt for USA and UP-KO respectively. In the briefing folder off the root DC directory, create a folder with the same name as you map. Then place the two text files into that folder.
+
+	For the sounds, record a wav file for each team and name them usa.wav and upko.wav. In the briefing folder off the sound folder, create a folder with the same name of your name just as you did for the text files. Place the wavs in that folder.
+
+
+
+Setting up objectives:
+======================
+
+	Place any number of info_objective entities give them each a different name. In info_teams set the boolean objective string for each team using the names of the newly created entities. The objective strings have 4 operators (AND, OR, THEN, XOR). "THEN" will cause objectives past it to be dormant until the objectives before it are completed (parentheses makes this more complicated than that, but it is still the same idea. Here are some examples:
+
+1) Obj1 AND Obj2 <- This would mean that they need to complete obj1 and obj2 obviously.
+2) Obj1 OR Obj2 <- self explanitory I believe.
+3) Obj1 OR (Obj2 AND Obj3) <- They would either have to do obj1 or BOTH obj2 and obj3.
+4) blah AND (bozo OR alpha) THEN escapeusa <- They would need to complete blah and bozo or alpha, then after those are completed. they would have to finish escapeuse to win. The escape objective would be dormant until the string on the left side of it evaluates as true.
+5) area1 THEN area2 THEN area3 THEN (area4 OR area5)
+6) ((obj1 AND obj2) THEN obj3) OR (obj2 THEN obj4)
+
+*the last two are left as an excercise to the reader to understand*
+
+	Objectives are completed by either triggering one with the source of the trigger a player (func_buttons and many other entities can do this) or triggering it with a "Set" to the team number of the team that completed it.
+
+0 = None
+1 = USA
+2 = UPKO
+3 = SotD *Not in the current version of DC*
+
+
+
+IV. Implemination Strategies
+============================
+
+
+Simple Team Deathmatch:
+=======================
+
+Required Entities:
+info_team x 2
+info_css
+info_intermission
+info_player_start x as many as you want
+
+	First go the the map properties and set the respawn type to player and set the round time to 0, this will cause the round to go on forever, basically turning off rounds. Now for the entities.
+	Second, place the spawns, the info_intermission, and setup the CSS box. Next, setup the two info_teams giving each a different targetname (e.g. usa_info, upko_info). Last, set the info_player_start's master to the corrisponding info_team. That's it, have fun.
+
+
+Round based 2 team warfare with a set number of lives:
+======================================================
+
+Required Entities:
+info_team x 2
+info_objective x 2
+info_css
+info_intermission
+info_player_start x as many as you want    OR func_player_start
+event_team_die x 2
+
+	First, go the the map properties and set the respawn type to spectator (this means to spawn as a spectator after all the lives are used up) and choose a decent round time, this is when the round will draw. Now for the entities.
+	First, place the spawns, the info_intermission, and setup the CSS box. Then setup the two info_objectives, call one upko_die and call the other usa_die. Next setup the two info_teams and set the objective for the USA to "upko_die" and the objective for the UP-KO to "usa_die" and set the names of info_teams to be usa_master and upko_master for the usa and upko respectively. Then set the lives for each team in the info_team to the number of lives that each player will start with. Next you can set the master of all of the spawn point you want the USA to use to "usa_master" and set all of the upko's to "upko_master". Last add the two event_team_die, set one to the usa and the other to the upko. Set the target of the one for the USA to usa_die and similar for the upko one. Set the triggerstate on each to "Set" and the set value to 2 for the usa_die (this is setting the upko's objective to be completed by the UP-KO) and the value for the upko_die's set value to 1. Have fun.
+
+
+A "Push" map, with points going back and forth and moving spawns: (By LPlasma)
+==============================================================================
+
+Required entities:
+info_team x 2
+info_objective x # of cap points
+info_css
+info_intermission
+info_player_start X as many as you want OR func_player_start
+master_state X 2 X # of cap points
+func_uses X # of cap points
+And lots of fun triggers.
+
+	First off, set the basic properties in the map, such as spawn time, etc. It is highly recommended that push maps are NOT round-based.
+	Second off, it is a good idea to have your map geometry setup, and each cap point and player spawn area marked. You should have a good idea of what happens depending on which cap points are captured by which team.
+	Then, you need to setup your objectives + masters. For each cap point, make an info_objective. Usually "CAP1"-"CAP5" or something. Then in each info_team, define their objectives as "CAP1 THEN CAP2 THEN... etc.", and the opposite order for the other team (push maps should be linear, not freeform).
+	Then you need to make your master_states. These essentially allow u to determine who owns which points, since the objectives as a master simply say if it IS captured, which wont work too well. You don't need a master for each team for the last cap point for each team. So you if u had 3 cap points, one team would need a "CAP1USA", "CAP2USA" and the other would need "CAP3UPKO" and "CAP2UPKO" (for example, names can vary).
+	Now that you have your masters and objective strings, u can actually make the cap points work. The 'standard' DC cap point is a barrel w/ a generic_model of a laptop on the top of it. The barrel itself is a func_use that is usually non-resumable. The key here is the master string. This determines who can cap it and when. Make sure you have your info teams named so u can use them as masters. So for example, if u wanted cap point 2 only able to be capped if usa has cap point 1, or upko has cap point 3, then you would enter a master string such as: "(USAINFO AND CAP1USA AND ~CAP2USA) OR (UPKOINFO AND CAP3UPKO AND ~CAP2UPKO). This would let USA try to cap it if they had the previous point (cap point 1), and they didn't already have the cap point, and the opposite is true, simply with different conditions for the other team (since they don't cap the points in the same order, it's not a race, it's a push map).
+	Then you need to setup the triggers, just enter a trigger name such as "POINTONE", a normal trigger, nothing special. What is special is that you have a GROUP of triggers that will ALL get triggered, but they have masters. The person that triggers all these triggers will have the applicable master data (such as team, tech, etc.) passed onto all of these triggers. So at each point you will want to use target_relays to: trigger the master of that point for that team to TRUE (so they 'have the point), trigger the master of that point for the OTHER team to false (so it knows the other team DOESN'T have the point anymore), and to trigger the info_objective with a set and the # of the team that has triggered it. You simply need a team master on each 'group' of relays for each team, so when the point is 'captured' it'll simply trigger those and run the set of triggers that apply to that team. Simple. Just make sure u have your names straight, otherwise you will get problems.
+	The only different part is for the last cap point for a team, for their set of target_relays, you don't need to bother turning the masters on/off, as the game has ended, all u need to do is trigger the info_objective with the set value, and they will win. This doesn't mean u need to ignore anything on the master STRINGS though on the func_use and such, keep those the same.
+	Also, with this setup it is easy to do moving spawns, since u have a set of masters that let u know who has what points. So if you wanted USA to spawn in the base area, then move their spawn forward with each point, u could set the masters accordingly. For instance, point one and the base spawn would be "USAINFO AND ~CAPTWOUSA" (it will spawn them there UNTIL they get point two). The point two capped spawn would be "USAINFO AND cAPTWOUSA AND ~CAPTHREEUSA" (meaning they have cap point two but NOT three, make sure u have it checking the current AND next points, if u leave one off it will spawn u back in the cap point 2 spawn even if u have three unless u check to see if three is capped or not). Also you can share spawn areas (though u obviously shouldn't do this if they could both spawn there AT the same time, but for instance, an area that whoever has cap point two spawns in) with a simple OR in the master string instead of a seperate group of spawns.
+	All of these techniques described have been tried and tested in both Urbandesert and coastline, and they work. If you have a problem, it is most likely linked to calling the wrong name of something to trigger, or setting a master wrong. Be CAREFUL when doing this, as it is a lot of entities, and easy to lose track of, but if you understand the basic concepts of the string logic, masters, and the advanced triggering system of DC, it's a piece of cake. These same sort of techniques can be applied with other objectives, think open, you can do anything, and any combination of any objective you want.
+
+P.S. Don't forget that you can use your master_states on many other things, like keeping a door locked for a certain team (using an OR in the master string) until they capture a point or do some other objective. This can be VERY handy for isolating the areas people play in to keep the gameplay more focused and refined. Also, you can use MORE masters and such if you want, it is up to you.
+
+P.P.S. There is a much simplier way to do this now using the "Owner Master" option in info_objectives.
+
+
+
+V. FAQ
+=======
+
+Q: I have put in the info_team entities, but the teams still aren't showing up on the team selection menu.
+
+A: You need to make sure that "Default Info" is checked for each of the info_teams that you want to be the default info for the team so the game has one to use as a default.
+
+
+
+Q: I have put my teamplay entities in, and now the map crashes when I go back to doing regular DM and LMS.
+
+A. Check "not in DM/LMS" for all of the teamplay related entities and spawn points. Plus make sure you have some spawn points that are valid for DM/LMS. If you add extra ones, make sure that you check "Not in Teamplay" so the players don't end up using them in teamplay games too. That will solve the problems.
+
+
+
+
+
+VI. Entity Guide
+=================
+
+*DON'T FORGET TO LOOK IN THE FGD FOR MORE ENTITIES, ALL OF THE ENTITIES ARE NOT YET LISTED*
+
+Prefixes:
+=========
+
+env_* - these decribe the environment in some way (models, sprites, special efx, rain, etc)
+
+event_* - these entities are triggered when certain game events happen, such as players dying, or the round ending
+
+func_* - these are brush based entities entities with some function (doors, buttons, trains)
+
+info_* - these describe the game in some way (spawn points, objectives)
+
+target_* - these are point based entities that cause different things to happen to the invoker, they don't do anything 
+by themselves
+
+trigger_* - these are brush based invisible entities that trigger when a player entities. Some do things to that player as well, but these functions could instead be relayed to a target_* entity. Example, trigger_hurt could be replaced by a trigger_multiple targeting a target_hurt, and vice versa.
+
+
+
+
+boolean_multisource: - Please don't confuse this with the boolean master string that all entities have
+=================================
+
+-As a master: Will return true if its multisource boolean string is true and its master is true.
+
+-As a trigger target: If the entity is listed (by targetname) in the mulitsource's boolean string, all instances of the name will be changed by the type of trigger. "Toggle" will toggle the entry, "On" will set it to true, "Off" will set it to false.
+
+-Target: This will be triggered when the boolean string first evaluates as true
+
+Example: TO BE WRITTEN LATER
+
+
+
+counter: - the counting entity
+==============================
+
+-As a master: Will return true if the counter is at its limit and its master is true
+
+-As a trigger target: "Toggle & On" will add one to the counter. "Off" will subtract one. "Set" will set the counter to that value.
+
+-Master: if master is false, the counter will not change its value when triggered, even by a "Set".
+
+-Initial value: the value the the counter will spawn with
+
+-Limit value: the current value of the counter
+
+-Target: whenever the counter reaches its limit value, if that target it set, it will trigger its target with the source being the last entity that triggered the counter.
+
+
+
+env_customize: - change the look of things on the fly
+=====================================================
+
+-As a master: No effect
+
+-As a trigger target: This make the env_customize "operate" on its target by changing the fields you specify. Like body, skin, scale, animation sequence, etc.
+
+-Master: controls whether the env_customize can be used or not
+
+-Target: the entity to change
+
+-Note: The fields are self explanatory, you control which ones you want the target to inherit with the flags.
+
+
+
+env_precip: - Global precipitation settings
+===========================================
+
+-As a master: does nothing
+
+-As a trigger target: This will set the current global precipitation settings to the values in this entity.
+
+-Angles: The direction of the precip
+
+-Sprite: The sprite to use. If the sprite ends with a "0" (zero), it will randomly choose any sprite with the same name and another number after it (ie, rain0.spr, rain1.spr, rain2.spr)
+
+-Sprite size: The size of the sprite in world units
+
+-Speed: The speed of the precip
+
+-Particles per second: The number of particles to create per second
+
+-Sprite Alpha: The intensity of the sprite
+	
+-Start Off: This will allow you to include server different env_precip in a single map and change which one you want to use by simple triggering it.
+
+
+
+event_team_die: - The team death event entity
+=============================================
+
+-As a master: will return true if all members of the specified team is dead and its master is true
+
+-As a trigger target: This will relay the trigger to its target if the all the members of the specified team is dead
+
+-Master: controls the relay and helps as a master
+
+-Target: whenever the last member of a team dies, this will trigger
+
+
+
+event_team_win: - The team win event entity
+============================================
+
+-As a master: Does nothing
+
+-As a trigger target: Does nothing
+
+-Target: whenever the specified team wins the round, this will trigger
+
+
+
+func_player_start: - brush based spawn area
+===========================================
+
+-As a master: returns true if its master is true
+
+-As a trigger target: No effect right now, a possible addition is the ability to toggle the spawn points on/off directly
+
+-Master: if master is false, the spawn point will be skipped. It used to control whether the spawn point is active and who can spawn on it.
+
+-Angles: the angles the player will assume when they spawn on this point
+
+-Target: the player who spawns on this will trigger the targeted entity
+
+-iNumTries: The number of random spawn tries in this area before the code considers this spawn area full
+
+
+
+func_use: - the use that take time (gets you killed)
+====================================================
+
+-As a master: returns true if the func_use is currently being used
+
+-As a trigger_target: will cancel the current use with an "Off" if the func_use is currently being used
+
+-Master: controls the usabilty of the func_use
+
+-Target: after a player has used the func_use for the specified amount of time, the target will be triggered by the player
+
+-Time (in seconds) to complete task
+
+-Message displayed while completing task: this is the little flashing message under the progress bar on the HUD
+
+-Message displayed after completion: this will flash once under the progress bar when the task is completed
+
+-Resume Type: 3 choices (Not, Resumable by same player, Resumable by anyone): this controls how the func_use can be resumed if the player is interrupted.
+
+-Objective to warn: If this is set, the named objective will flash the capper's team color when capping
+	
+-Hide progress: Will turn off the progress bar on the HUD
+
+-Non-solid brush: Makes the func_use brush itself non-solid
+
+Note: func_use will eventually have a multimanager like interface for doing multiple triggers at different points along the progress bar
+
+
+
+generic_model: - a multi-purpose visible model (or sprite)
+==========================================================
+
+-As a master: does nothing
+
+-As a trigger target: does nothing
+
+-Model: The model file to use
+
+-Framerate: 1.0 is Normal
+
+-Sequence: The animation to use
+
+-Body: Sub-model selection
+
+-Skin: Current skin-group
+
+-Frame: Current frame of animation. If this is set the model will be locked on that frame and will not animate
+
+-MoveWith: One of the most intresting fields in a generic_model. This is the name of an entity that you want this generic_model to follow. The generic_model will copy that entities origin and angles as that entity moves. If the other entity is a brush, it needs an origin brush for this to work correctly.
+
+-Not Solid: No collision with this model
+
+-Don't fall: The model will float where you put it. Otherwise it will drop to the floor.
+
+
+
+info_css - info point to tell code where the big black box is
+=============================================================
+
+-As a master: no effect
+
+-As a triggered target: no effect
+
+
+
+info_intermission: - Specator and intermission spawn point
+==========================================================
+
+-As a master: returns true if its master is true
+
+-As a trigger target: No effect right now, a possible addition is the ability to toggle the spawn points on/off directly
+
+-Master: used to control whether the spawn point is active and who can spawn on it.
+
+-Angles: the angles the player will assume when they spawn on this point
+
+-Target: the player who spawns on this will trigger the targeted entity
+
+
+
+info_location: - For the location of players on the HUD
+=========================================================
+
+-Simply takes the index value you from the map and references mapname.loc. See the other .loc files for the format of this. It uses the closest info_location to the player to determine their location. This is checked once per second.
+
+
+
+info_objective: - An objective
+==============================
+
+-As a master: returns true if the objective is currently active
+
+-As a trigger target: One must use "Set" to set which team has completed this entity, if it doesn't have a player as the source of the trigger. A func_use targetting a info_objective directly doesn't need to use "Set". "Off" will reset the entity if REVERSABLE is chosen.
+
+-Name to show on HUD
+
+-Objective group (on HUD): which group it is in (there is spacing between different groups)
+
+-Points awarded for completion
+
+-Points for reversing objective
+
+-Message when completed
+
+-Message for reversing
+
+-Type of message: Who to send the message too
+
+*FLAGS*
+
+-Dormant upon completion: The objective will become dormant after it is completed
+
+-Start Active: The objective will start active even if it is not in a current THEN branch.
+
+-Reversable: The team that has completed this objective can be changed with a "Set", or reversed with an "Off"
+
+-Registered: The objective will show up on HUD
+
+-Owner Master: this changes the functionality of "as a master" to cause it to be true only to the team that has currently completed the objective
+
+
+
+info_player_start/info_player_deathmatch: - The generic spawn point
+===================================================================
+
+-As a master: returns true if its master is true
+
+-As a trigger target: No effect right now, a possible addition is the ability to toggle the spawn points on/off directly
+
+-Master: used to control whether the spawn point is active and who can spawn on it.
+
+-Angles: the angles the player will assume when they spawn on this point
+
+-Target: the player who spawns on this will trigger the targeted entity
+
+
+
+info_status: - The hud status of info_objective without info_objective
+======================================================================
+
+-As a master: return true by default 
+
+-As a trigger target: One must use "Set" to set which team has completed this entity, if it doesn't have a player as the source of the trigger. A func_use targetting a info_status directly doesn't need to use "Set". "Off" will reset.
+
+-Name to show on HUD
+
+-Objective group (on HUD): which group it is in (there is spacing between different groups)
+
+-Message when completed
+
+-Message for reversing
+
+-Type of message: Who to send the message too
+
+*FLAGS*
+
+-Dormant upon completion: The info_status will return false as a master after it is completed
+
+-Reversable: The team that has completed this objective can be changed with a "Set", or reversed with an "Off"
+
+-Registered: The info_status will show up on HUD
+
+-Owner Master: this changes the functionality of "as a master" to cause it to be true only to the team that has currently completed the info_status
+
+
+
+info_team: - Team definitions
+=============================
+
+-As a master: will return true if the source is on team the master defines
+
+-As a trigger target: This will re-define a team. With this it is possible to change the objectives of the team, or any other entries made in info_team
+
+-Master: It will ignore triggers is the master is false
+
+-Base team: The team ID that this info_team is defining
+
+-Name for team: The name that will be displayed on the team selection, win messages, and the scoreboard
+
+-Objectives: The objective string for this team. Use "NONE" for no objectives
+
+-Number of Lives per player: The number of lives per player. This only affects the spectator respawn type
+
+-Spawn delay: The time it take for the player to respawn after dying during the round
+
+-Default Info: This _must_ be set if the info_team is never triggered to set the teams info. There should always be one "Default Info" info_team for each team on that map.
+
+Note: The weapon restriction system is also embedded in this entity. More on that later. You can have multiple info_teams for each team on a single map, just trigger them to make that info_team's information active.
+
+
+
+master_key: - Object specific master/relay
+==========================================
+
+-As a master: will return true if the source is carrying the named "object" entity and the master_key's master is true
+
+-As a trigger target: This will relay the trigger to its target if the source of the trigger is carrying the named object
+
+-Master: used in "As a master"
+
+Name of object - the name of the object to check for
+
+Example: If you set the master of a func_button to a master_key, the player can only use the func_button if they have the object the master_key is looking for
+
+
+
+master_relay: - Generic master/relay
+====================================
+
+-As a master: will return true if the the master_relay's master is true
+
+-As a trigger target: This will relay the trigger to its target if the master_relay's master is true
+
+-Master: used in "As a master"
+
+Note: The master_relay is just that, instead of having a say of its own, it asks its master instead. It is a way to keep some of the master entries simplier by allowing entities to use a common master that then does the more complicated evaluations
+
+
+
+master_state: - State switch master
+===================================
+
+-As a master: will return true if this is currently in its ON state and the master_state's master is true
+
+-As a trigger target: An "On" will set the master to its ON state. "Off" will turn it OFF. "Toggle" will toggle the switch.
+
+-Master: used in "as a master" and will disable changing the value of the switch
+
+-Start ON: controls its intial value when spawned or reset
+
+Note: master_state start off unless you tell them otherwise
+
+
+
+master_team: - Team specific master/relay
+=========================================
+
+-As a master: will return true if the source is on the specified team and the master_teams's master is true
+
+-As a trigger target: This will relay the trigger to its target if the source of the trigger is on the specified team
+
+-Master: used in "As a master"
+
+-Team: the team to check for
+
+
+monster_sentry: For protecting spawns
+===========================================
+-Add a key 'team' and the value 1 for a USA owned sentry (will not shoot USA), and 2 for UP-KO. Turn off smart-edit to do this.
+
+
+multi_manager: - Time to do things
+================================
+
+*SAME AS THE DEFAULT HL ENTITY MINUS THESE CHANGES*
+
+-The master field now controls whether it can be used or not
+
+-If you trigger a non-multithreaded multimanager while it is active, it will pause the multimanager. Triggering it again will cause it to resume from where it left off.
+
+
+
+object: - A generic game item
+=============================
+
+-As a master: will return true if the source is carrying any "object" entity by the same name
+
+-As a trigger target: give the source the item if the source is a player and the object's master is true
+
+-Master: controls whether the object can be picked up or not
+
+-Target: it will trigger the target whenever the item is picked up
+
+-Name: The identifing name of the object
+
+-Respawn time (in seconds, 0 for none)
+
+-Respawn Type: 2 choices (Only after idling on the ground for X seconds, At any time after moved from spawn point)	
+
+-Make copies: The object will give copies of itself to the players instead of moving with them
+
+-Objective to warn: If this is set, the named objective will flash the holder's team color when this object is held
+
+Note: many more option are coming for this entity including passive effects (like slowed/enhanced movement etc), as well as the option to blend the model with the player instead of floating above his head. Also the ability to use them like TFC detpacks to preform custom mapper defined tasks
+
+
+
+target_all_players: - forces all players to target a certain entity
+===================================================================
+
+-As a master: nothing
+
+-As a trigger target: this will force all players the are true to the master to trigger the target_all_players target.
+
+-Master: Used in as "a trigger target"
+
+Example: If you wanted to respawn an entire team, have a target_all_players targeting a target_respawn. Have the target_all_players master set to a master_team or info_team of the desired team. Then when the target_all_players is triggered, that entire team will respawn at a random valid spawn point.
+
+
+
+target_give: - is it Christmas already?
+=======================================
+
+-As a master: nothing
+
+-As a trigger target: If the source is a player and it is true to the master, the player will be given the named item or weapon
+
+-Master: Used in as "a trigger target"
+
+-Item to give: the classname of the item to give the player. (e.g. weapon_spas to give the player the spas12)
+
+Note: Look at section VII for the weapon classnames.
+
+
+
+target_hurt: - hurt the player
+==============================
+
+-As a master: nothing
+
+-As a trigger target: If the source is a player and it is true to the master, the player will take the specified amount of damage
+
+-Master: Used in as "a trigger target"
+
+-Damage: the amount of damage to do the player
+
+
+
+target_kill: - kill the player
+==============================
+
+-As a master: nothing
+
+-As a trigger target: If the source is a player and it is true to the master, the player will die
+
+-Master: Used in as "a trigger target"
+
+
+
+target_random: - variety is the spice of life
+=============================================
+
+-As a master: relays to its master
+
+-As a trigger target: This is the purpose of this entity. The target_random will either randomly pick one of its target based on a defined probability or will do a probability check on all of its targets and trigger them. Possible targets are added to the entity by turning off "smart edit" and adding the name of the entity to target as the keyname and the probabilty of for that entity as the value (similar to how you setup multimanagers).
+
+-Random Mode: Defines which of the two modes to put the target_random into. "Weighted Chance" will pick one of the targets based on the "weight" of each. If you set the value of one target to 1 and the other to 2, the entity set to 1 will be picked 1/3 of the time, the other will be picked 2/3 of the time. "Percent Chance" will possibly pick all of them, but uses the value of the keyname you defined as the percent chance (i.e. 70%, written simply as .7) of each being triggered.
+
+
+
+target_respawn: - respawn the triggerer
+=======================================
+
+-As a master: nothing
+
+-As a trigger target: If the source is a player, the player will respawn without losing points if true to the master.
+
+Note: This entity can be used for creating "sub-rounds" within the rounds themselves.
+
+
+
+target_spectator: turn the player into a spectator
+==================================================
+
+-As a master: nothing
+
+-As a trigger target: If the source is a player and it is true to the master, the player will turn into a spectator
+
+-Master: Used in as "a trigger target"
+
+
+timer: the timer
+================
+
+-As a master: always false
+
+-As a trigger target: ON will start this timer, OFF will pause it, SET will set it to a certain time limit (in seconds)
+
+-Target: Will trigger this when the timer reachs zero.
+
+-Registered: show this timer on the hud
+
+-Repeat: Reset timer and start imediately after timer ends
+
+Note: The timer on the hud will always display the timer that is the closest to be completed, active, and registered. To set a team to win from a timer, use a SET trigger type with the value of that team to an info_objective
+
+
+
+trigger_hold: - the territorial control entity
+==============================================
+
+-As a master: Will return true if a player is currently in this entity that fulfills the master
+
+-As a trigger target: this will reset the timer
+
+-Master: Controls who can "hold" this entity
+
+-Target: The target that will be triggered by the player when the player has stood in the entity for the required amount of time.
+
+-Time (in seconds) to complete task
+
+-Message displayed while completing task (under the progress bar)
+
+-Message displayed after completion (under the progress bar)
+
+-Hold Type: 0: "Consecutive by same player"	1: "Consecutive by anyone"	2: "Resumable"
+
+-Hide progress: This will disable the progress bar
+
+-Repeatable: This allows the entity to reset itself during the same round to be held again
+
+
+
+trigger_objectcapture: - A capture area for an object
+=====================================================
+
+-As a master: will return true if the capture area has the object
+
+-As a trigger target: no effect
+
+-Master: controls if the capture will capture the object or not
+
+-Target: the trigger_objectcapture will trigger the target when the specified enters its area
+
+-Name of object to capture
+
+-Position to place object after capture: the name of an info_orientation that will be the position and angles of the object after it is captured
+
+
+
+zone: - The area master brush
+=============================
+
+-As a master: will return true is source is in the zone itself
+
+-As a trigger target: the zone will force all players to target one of two entities. If the player is inside the zone, they will be directed to trigger one entity. If outside, they will trigger the other. The zone will then set two counters, one for the number of players inside the zone, the other for the number of players outside
+
+-Master: controls the usability of the zone
+
+-Target for IN players
+-Target for OUT players
+-Counter for IN players
+-Counter for OUT players
+
+Example: This could be used to define a certain place a player has to stand to use a certain func_button. If you set the master of the func_button to a zone, then the player must be standing inside that zone for the player to use the button. This entity could also be used for a nuclear attack effect. The mapper could define a "safe" zone with a zone entity. The effect would work by setting the "OUT" target to a target_hurt, if any player is standing outside the zone when it is triggered, they will receive the damage from the target_hurt.
+
+
+
+zone_nodamage: - Damage nullifacation zone
+==========================================
+
+-As a master: will return true is source is in the zone itself and the master is true with the player as the source
+
+-As a trigger target: no effect
+
+-Master: used in as a master
+
+-Note: the game code will check if the player is standing in one of these entities everytime damage is about to be applied to it. If they are, then they will receive no damage. This can be a slow calculation if there are a lot of zone_nodamage in the map. So use them sparingly.
+
+
+
+
+
+
+
+
+
+
+VII. Weapon classnames
+======================
+
+weapon_1100
+weapon_alarm
+weapon_c4
+weapon_chaingun
+weapon_deagle
+weapon_emsniper
+weapon_flame
+weapon_flaregun
+weapon_gurkha
+weapon_handgrenade
+weapon_hk33ka2
+weapon_katana
+weapon_knife
+weapon_laser
+weapon_m79
+weapon_mp510
+weapon_mp5k
+weapon_napalm
+weapon_p226
+weapon_plasma
+weapon_prifle
+weapon_sledge
+weapon_spas
+weapon_tknife
+
+
+
+*written by Ikkyo. For help e-mail me at jgripp@budget.net

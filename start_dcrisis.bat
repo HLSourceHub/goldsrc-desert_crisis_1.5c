@@ -1,0 +1,1 @@
+hl.exe -game dcrisis -num_edicts 2048 -console

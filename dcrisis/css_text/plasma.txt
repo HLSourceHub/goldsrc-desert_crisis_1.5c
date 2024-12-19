@@ -1,0 +1,17 @@
+C-37 Plasma Cannon
+
+Ammo Capacity: 7 Blasts or 4 seconds of stream
+Rate of Fire: 40 Blasts per minute
+Damage: Very High w/ Spread
+
+The plasma cannon fires super heated gas in
+either a concentrated blast, or a stream.
+When a concentrated blast is fired, the plasma
+streaks towards it's point of impact and
+explodes. One must be VERY careful as ones own
+plasma rifle can easily overheat and explode,
+killing the wielder.
+
+Secondary fire ejects a stream of plasma which
+is great for close ranges but causes very rapid
+heat buildup, so be careful.

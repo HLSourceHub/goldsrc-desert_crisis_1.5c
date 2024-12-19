@@ -1,0 +1,8 @@
+// de
+
+4	// number of sprites
+weapon			640 p226	0	0	176	48
+weapon_s		640 p226	0	0	176	48
+weapon_akimbo		640 p226a	0	0	176	48
+weapon_s_akimbo		640 p226a	0	0	176	48
+

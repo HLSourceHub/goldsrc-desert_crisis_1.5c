@@ -1,0 +1,19 @@
+Kung-fu Master
+
+Bonuses:
+-Increased Adrenaline
+-Attack while dashing
+-Increased Melee Damage
+-Free throwing knives
+
+Restrictions:
+-None
+
+When ammo runs out, hand-to-hand fighting
+becomes the name of the game. Those with 
+Kung-fu Master get a bonus to their melee
+attack damage, as well as the ability to attack
+with a melee weapon while dashing. Dashing
+attacks are something everyone else won't be 
+able to do, giving Kung-fu Masters a great 
+advantage.

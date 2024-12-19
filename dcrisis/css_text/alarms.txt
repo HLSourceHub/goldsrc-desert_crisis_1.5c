@@ -1,0 +1,17 @@
+Alarms
+
+Alarms can be set anywhere the user wishes.
+They are triggered by enemies running though
+their field of view. They look only for enemy 
+movement, so team-mates will not trigger them.
+
+When triggered, alarms also send a radio
+location indicator to the owner of the alarm,
+informing when the alarm has be tripped and
+in what area of the map. This is very useful
+for defending multiple areas simultaneously.
+
+Example:
+* Alarm Trigged (Grassy Knoll)
+
+BEEP BEEP BEEP!

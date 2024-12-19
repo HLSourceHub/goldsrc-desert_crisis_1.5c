@@ -1,0 +1,24 @@
+EM Sniper Rifle
+
+Clip Size: 4 Shots
+Rate of Fire: 25 RPM
+Damage: Very High
+
+The EM Sniper Rifle can be described as the 
+ultimate sniping weapon. This weapon has
+a low rate of fire compared to many of the other
+guns. But what it lacks in speed, it more
+than makes up for in power. When this weapon
+fires, it instantly reaches its target. It not
+only burns the flesh where it hits, but the
+beam is so powerful and concentrated that the
+air near the impact point becomes super heated
+and temporarily reaches a plasma state. This
+will severely damage the person and is almost
+a guaranteed kill for targets with little
+armor. This is not a weapon for people who
+can't aim though, as your aim counts for
+everything.
+
+Secondary fire zooms in smoothly completely,
+and almost instantly.

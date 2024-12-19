@@ -1,0 +1,9 @@
+H&K MP5/10
+
+Clip size: 30 Rounds
+Rate of Fire: 800 RPM
+Damage: Medium
+
+Your average machine gun, the MP5/10 has single, 
+three round and fully automatic firing modes. 
+It fires very accurately for a SMG.

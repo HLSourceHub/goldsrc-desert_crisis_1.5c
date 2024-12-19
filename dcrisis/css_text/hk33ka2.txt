@@ -1,0 +1,20 @@
+H&K 33ka2 Sniper Rifle
+
+Clip size: 25 Rounds
+Rate of Fire: 600 RPM
+Damage: High
+
+The H&K33ka2 is a standard assault rifle. This 
+gun has single, three round, and fully automatic
+firing modes as well as a scope. It is a very 
+flexible gun and when wielded by an experienced 
+user it can be useful in many situations, be it 
+sniping or close quarters battles. There is no 
+secondary fire.
+
+This rifle becomes very inaccurate during
+sustained fire, so controlled bursts are essential 
+for efficient use.
+
+Use your bound zoom buttons to zoom in and
+out.

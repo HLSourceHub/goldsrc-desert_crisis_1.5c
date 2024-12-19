@@ -1,0 +1,12 @@
+Bio-Regeneration
+
+Bonuses:
+-Regenerating Health
+
+Restrictions:
+-None
+
+With the recent advances in nanotechnology,
+people have begun injecting themselves with
+armies of tiny robots to help the body repair 
+itself in the event of trauma.

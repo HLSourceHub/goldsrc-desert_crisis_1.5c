@@ -1,0 +1,15 @@
+Urban Desert is a map set in a city in the middle east, the USA and UP-KO
+are fighting for control of the city.
+
+USA: Capture the tunnels, the embassy, the market, the church
+and the compound, in that order and stop the UP-KO team from capturing
+those points in the opposite order.
+
+UP-KO: Capture the compound, the church, the market, the embassy and
+the tunnels in that order and stop the USA team from capturing those points
+in the opposite order.
+
+dc_urbandesert
+Map by Seraph
+Entities by LPlasma
+Textures by the DC Team and Valve Studios

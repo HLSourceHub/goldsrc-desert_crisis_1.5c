@@ -1,0 +1,20 @@
+.357 Desert Eagle
+
+Clip Size: 7 Rounds
+Rate of Fire: Medium, semi-auto
+Damage: High
+
+The Desert Eagle has a rather fast rate of fire 
+and high damage, but is not as accurate as the 
+sig or matches. It certainly is not as deadly
+as the Raging Bull. These bullets pack a
+wallop though, so don't be fooled by its
+downsides.
+
+Picking up a second Desert Eagle off the
+ground will complete an akimbo set. Allowing
+the user to wield both at once.
+
+Changing modes switches between which deagle
+one has out. Each deagle has an independent
+clip, which can be used to ones advantage.

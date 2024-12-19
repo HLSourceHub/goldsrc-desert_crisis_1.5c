@@ -1,0 +1,19 @@
+Tech Guru
+
+Bonuses:
+-Faster Cap-times
+-Free Enhanced IR Goggles
+
+Restrictions
+-Must be wearing armor
+
+Some soldiers undergo special training for the
+more complicated activitives that happen
+during a war. Things like hacking a computer
+network, working with high-tech gadgets, and
+other geeky things are the realm of the Tech
+Guru.
+
+Some paths to objectives can only be opened by
+a tech guru. Use your objective info button to
+find them.

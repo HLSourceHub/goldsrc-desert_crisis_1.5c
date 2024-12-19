@@ -1,0 +1,1 @@
+UP-KO: Disable both East and West Security terminals to open all secure doors. Then, re-wire the Circuit Panel on the 2nd floor to allow access to the Data CD on the third floor. Return the Data CD to your intrusion point.

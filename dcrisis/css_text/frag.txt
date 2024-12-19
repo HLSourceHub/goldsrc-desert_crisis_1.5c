@@ -1,0 +1,8 @@
+Frag Grenade
+
+Frag grenades are nothing more than your
+standard grenade. They explode and kill 
+things, so be careful with them. The secondary
+fire sets the grenades to a four second timer
+as soon as you press fire, so don't hold onto
+it too long.

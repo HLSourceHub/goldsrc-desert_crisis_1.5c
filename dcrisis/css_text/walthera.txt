@@ -1,0 +1,20 @@
+Akimbo USP Match 9mm's
+
+Clip Size: 15 Rounds X 2
+Rate of Fire: Fast Semi-Auto
+Damage: Low
+
+The USP Matches have a fast rate of fire but 
+are not as deadly as the other pistols. These 
+guns are fairly accurate though, which makes up 
+for their lack of damage. The silencers slightly 
+reduce the accuracy though, so they are not as 
+accurate as the P226s. Headshots are still the 
+key to success.
+
+Secondary fire will fire BOTH pistols but
+requires extra time between shots.
+
+Changing modes switches between which
+USP(s) one has out. Each USP has an independent
+clip, which can be used to ones advantage.

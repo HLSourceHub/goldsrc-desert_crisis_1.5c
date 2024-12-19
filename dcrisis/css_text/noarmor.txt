@@ -1,0 +1,17 @@
+No Armor
+
+Protection: None
+Speed: Very Fast
+
+Restrictions:
+-No Tech Guru
+
+No armor is used when one must be as agile and 
+quick as possible. Although you will be quick in 
+life, you will be quick in death too. Being 
+completely void of armor means you can take very 
+little damage before dying. You are vulnerable to
+automatic weapons or near misses from explosives.
+
+It's great for getting to the fighting quickly, but
+bad for staying in the middle of it.

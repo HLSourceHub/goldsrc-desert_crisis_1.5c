@@ -1,0 +1,11 @@
+Hamalio is a small area hidden deep among the rocky canyons.
+
+The objective in this map is to capture the UP-KO side,
+USA side, tunnel market, and caves in any order. These
+can be taken by any team at any time, so you must proceed
+carefully.
+
+dc_hamalio
+Map by Seraph
+Entities by LPlasma
+Textures by Valve, and the DC staff

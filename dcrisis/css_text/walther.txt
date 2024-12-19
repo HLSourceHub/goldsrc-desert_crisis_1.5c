@@ -1,0 +1,22 @@
+USP Match 9mm
+
+Clip Size: 15 Rounds
+Rate of Fire: Fast Semi-Auto
+Damage: Low
+
+The USP Match has a fast rate of fire but 
+is not as deadly as the other pistols. This 
+gun is fairly accurate though, which makes up 
+for its lack of damage. The silencers slightly 
+reduce the accuracy though, so it's not as 
+accurate as the P226. Headshots are still the 
+key to success.
+
+Picking up a second USP off of the ground will 
+complete an akimbo set, allowing the user
+to wield both at once.
+
+Changing modes switches between which
+USP(s) one has out. Each USP has an
+independent clip, which can be used to ones
+advantage.

@@ -1,0 +1,11 @@
+Akimbo Pistols
+
+When paired with a supported secondary weapon,
+one gets two of that weapon instead of one.
+
+Supported Weapons:
+USP Match
+Sig P226
+Desert Eagle
+Raging Bull
+Laser Pistol

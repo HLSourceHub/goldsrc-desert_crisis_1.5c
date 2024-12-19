@@ -1,0 +1,15 @@
+This is a small team deathmatch map. It is best
+with 4 or so players. It is a map set in an
+Italian village that has been partially damaged.
+
+Objectives: Kill the people that don't look like
+you. :D
+
+This map is played in rounds (the players become spectators
+when they die 3 times, they are spectators until the round 
+restarts).
+
+dc_village
+Map by Seraph
+Entities by LPlasma
+Textures by Valve, and the DC staff

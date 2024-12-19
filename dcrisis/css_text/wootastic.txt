@@ -1,0 +1,18 @@
+Wootastic
+
+Bonuses:
+-Increased Adrenaline
+-Unlimited pistol ammo
+
+Restrictions:
+-Only pistols
+-No medium or heavy armor
+
+You get no primary weapon, but you get akimbo
+pistols which have unlimited ammo but slightly 
+reduced damage. You also have extra adrenaline 
+points and special moves (except for dashing) 
+are enhanced. Longer and higher flips and better wall 
+jumps are the result. Wootastic doesn't use an 
+equipment choice to get akimbo pistols. One must 
+wear light armor, or no armor to use this perk.

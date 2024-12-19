@@ -1,0 +1,13 @@
+Light Armor
+
+Protection: Poor
+Speed: Fast
+
+Restrictions: None
+
+Light armor is the most basic armor. While being 
+light enough for a lot of maneuverability, it still 
+provides some protection against damage.
+
+It's great for getting to the fighting quickly, but 
+bad for staying in the middle of it.

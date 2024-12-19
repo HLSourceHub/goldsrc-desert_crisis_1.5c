@@ -1,0 +1,16 @@
+Countryside is set in a town in the outskirts of France. The USA
+is trying to repel the UP-KO forces that have occupied the town.
+
+USA: After important targets were bombed you have been sent
+to take this town which is a strategic point in recapturing 
+your French allies capitol.  Your objective is to capture in
+order the Crossways, Grassy Knoll, Plaza, and Gothic Church by
+"using" laptops at each point.
+
+UP-KO: Stop the USA from taking this important strategic town
+in the French countryside.
+
+dc_countryside
+Map by Spongerock + Additions/Changes by Seraph
+Entities by Ikkyo + LPlasma (locations + sentries)
+Textures by Sniper, Sponge and Valve Studios

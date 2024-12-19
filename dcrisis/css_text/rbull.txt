@@ -1,0 +1,19 @@
+Raging Bull Model 444
+
+Clip Size: 6 Rounds
+Rate of Fire: Slow Semi-Auto
+Damage: Very High
+
+With very high damage and very 
+accurate when fired singlely, this may be
+the most deadly of the pistols. The drawbacks 
+are a slow rate of fire and small clip.
+
+Picking up a second Raging Bull off the
+ground will complete an akimbo set, allowing
+the user to wield both at once.
+
+Changing modes switches between which Raging
+Bull(s) one has out. Each Raging Bull has an
+independent clip, which can be used to ones
+advantage.

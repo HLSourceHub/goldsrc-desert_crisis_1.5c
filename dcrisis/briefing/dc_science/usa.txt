@@ -1,0 +1,8 @@
+USA: First you must use the the helicopter or boat to gain access to the island.
+Then you must destroy the satellite uplink for the security system, allowing access
+to the research facility and shutting off the turrets. Once you have done this, you
+must hack the security system at the front desk of the research facility and take
+the weapon from the basement to the USA spawn. The security system can be hacked after
+the weapon is taken, but the door to the vault is unlocked, making it easier to get the
+weapon if the security is hacked. There is also an alternate path to the basement that techs
+can blow open.

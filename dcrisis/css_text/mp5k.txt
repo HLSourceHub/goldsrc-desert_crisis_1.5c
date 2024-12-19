@@ -1,0 +1,18 @@
+H&K MP5K
+
+Clip size: 15 Rounds
+Rate of Fire: 800 RPM
+Damage: Low
+
+A great SMG, it is fast and deadly. Effective 
+for spraying and praying, it has a relatively 
+quick reload, so the spraying is only shortly 
+interrupted.
+
+Picking up a second mp5k off of the ground will
+complete an akimbo set, allowing the user to
+wield both at once.
+
+Changing modes switches between which mp5k(s)
+you have out. Both mp5k's need ammo to fire
+in akimbo mode.

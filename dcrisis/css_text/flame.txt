@@ -1,0 +1,18 @@
+Z-12 Inferno
+
+Ammo Capacity: 15 seconds worth of fuel
+Rate of Fire: N/A
+Damage: Varies
+
+The flamethrower is great for pushing the
+enemy back or clearing out tight areas. This
+weapon will light those it comes into contact
+with long enough on fire. Once lit your victim 
+must either get to water, or wait for the flames to 
+go out on their own, the choice is his. In tight
+quarters, the effects of the flamethrower will
+increase since it will be "contained" by the walls
+and the intensity of the heat will be significantly 
+higher.
+
+There is no secondary fire.

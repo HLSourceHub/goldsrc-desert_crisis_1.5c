@@ -1,0 +1,13 @@
+C4 High Explosives
+
+This is two blocks of the high explosive C4, 
+complete with remote detonation device. Drop 
+these in high traffic areas, then wait for an
+unsuspecting victim to stroll by.
+
+Primary attack drops a c4 if none is out, or
+detonates those that are already out.
+
+Secondary attack drops a c4 even if one is
+already deployed, allowing for the user to
+place multiple blocks for added effect.

@@ -1,0 +1,20 @@
+Personal Defense Shield
+
+Bonuses:
+-Increased melee damage with shield on
+-Protection from headshots with shield
+
+Restrictions:
+-None
+
+A shield to provide extra protection for the
+modern soldiers in the US Army. It is great for
+staying alive without having to be slowed down
+by big bulky armor, and it slowly regenerates
+when the shield is turned off.
+
+Active the shield with your item key. It
+passively drains energy while on, so don't
+turn it on unless you need it. While the shield
+is up, damage will be dealt to your perk energy
+instead of your armor and life.

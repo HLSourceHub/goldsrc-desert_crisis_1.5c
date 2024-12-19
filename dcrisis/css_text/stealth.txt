@@ -1,0 +1,13 @@
+Stealth
+
+Bonuses:
+-No footstep sounds
+-Invisible to normal IR
+
+Restrictions:
+-No heavy armor
+
+For the soldier who wants to enter the battle
+unannouced by his footsteps. Stealth is the premium 
+tool for flanking, sneaking up on snipers, and many
+other silent activities.

@@ -1,0 +1,14 @@
+Akimbo H&K MP5K
+
+Clip size: 15 Rounds X 2
+Rate of Fire: 800 RPM X 2
+Damage: Low
+
+A great pair of SMGs, they are fast, and deadly. 
+Effective for spraying and praying, these have a
+relatively quick reload, so the spraying is
+only shortly interrupted.
+
+Changing modes switches between which mp5k
+you have out. Both mp5ks need ammo to fire
+in akimbo mode.

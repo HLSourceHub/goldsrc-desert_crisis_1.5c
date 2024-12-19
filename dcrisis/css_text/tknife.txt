@@ -1,0 +1,13 @@
+Throwing Knifes
+
+Damage: High
+
+The throwing knives are small knifes which 
+where designed for throwing. You have
+the option of throwing 1 or 3 knives. Change
+this by pressing your weapon mode key.
+
+Throwing one knife at a time goes much farther
+than throwing three. However, the spread of
+three knives makes it much easier to hit
+enemies that are at point blank range.

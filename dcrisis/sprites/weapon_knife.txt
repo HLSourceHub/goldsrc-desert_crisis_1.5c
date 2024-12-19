@@ -1,0 +1,5 @@
+// de
+
+2	// number of sprites
+weapon			640 knife	0	0	176	48
+weapon_s		640 knife	0	0	176	48

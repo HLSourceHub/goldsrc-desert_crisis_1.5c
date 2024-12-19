@@ -1,0 +1,15 @@
+dc_nuclearclimax
+
+After months of war, covert special operations team from both UP-KO and USA are closing in
+on one of the few remaining nuclear missile silos. Both forces plan to use this missile to
+strike against one another, but who will be the final target? While both teams try to launch
+the missile, they must be wary of the other team who is trying to do the same. 
+
+The objective in this map is to turn on the fuel, power, upload the software, select a target,
+and then to launch the missile. Yet the target of the nuke can be changed in the time it takes
+for the weapon to be launched, so your team must be wary of the progress and location of the other
+team.
+
+Map by Seraph
+Entities by LPlasma
+Texture by the DC team

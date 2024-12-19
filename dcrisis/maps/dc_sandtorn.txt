@@ -1,0 +1,18 @@
+A remote desert village is under heavy UPKO assault.  
+Their goal is to destroy a factory which has been 
+creating a new form of Shield system for USA, amongst 
+other prototypes.
+
+UPKO: There is a bomb hidden in a crate defended by 
+the new shield system.  You must disable the shield 
+on the crate from the two computers located within 
+the market.  Afterwards, destroy the crate, take 
+the bomb inside, and plant it in front of the factory.
+
+USA: You must stop UPKO at all costs, this city must 
+not fall under UPKO rule.
+
+dc_sandtorn
+Map by Spongerock
+Entities by LPlasma
+Code for everything by Ikkyo

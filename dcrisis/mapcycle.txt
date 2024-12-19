@@ -1,0 +1,13 @@
+dc_countryside
+dc_sandtorn
+dc_science
+dc_coastline
+dc_hamalio
+dc_madhu
+dc_urbandesert
+dc_alienrelic
+dc_nuclearclimax
+dc_kinetica
+dc_village "\minplayers\0\maxplayers\10"
+dc_armstech
+dc_velocity "\minplayers\0\maxplayers\10"

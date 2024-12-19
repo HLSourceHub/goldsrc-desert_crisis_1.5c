@@ -1,0 +1,22 @@
+Sharpshooter
+
+Bonuses:
+-Aiming
+-Free IR Goggles
+-Passive accuracy increase
+
+Restrictions:
+-No special moves (dashing, walljumps, flips)
+
+With increased training comes increased
+accuracy. Sharpshooters spend hours per day
+honing their aiming skills in hopes of someday
+getting to use them in battle. Unfortunately, all
+of this aiming practice has left their bodies
+weak, and unable to the do athletic moves of
+other soldiers.
+
+Aiming is activated by pressing your item key.
+You will gain perfect accuracy for a short
+period, but you will not be able to maintain that
+level of concentration long, so aim quickly.

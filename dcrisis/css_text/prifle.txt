@@ -1,0 +1,19 @@
+C-22 Pulse Rifle
+
+Clip Size: 45 Rounds
+Rate of Fire: 1000 RPM
+Damage: Low
+
+Another great multi-purpose gun is the Pulse
+Rifle. This is a machine gun and a grenade launcher 
+in one firearm. The Pulse Rifle can only fire in fully 
+automatic mode; there is no single shot or three round
+burst mode. The advantage is the built in grenade 
+launcher. Press secondary fire and watch your enemies 
+explode. 
+
+Once again, be careful because this gun can
+be worthless in the hands of a newbie.
+Sustained fire will greatly reduce it's
+accuracy, so shorter bursts are essential for
+efficient use.

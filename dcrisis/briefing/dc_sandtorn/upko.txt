@@ -1,0 +1,5 @@
+UPKO: There is a bomb hidden in a crate defended by 
+the new shield system.  You must disable the shield 
+on the crate from the two computers located within 
+the market.  Afterwards, destroy the crate, take 
+the bomb inside, and plant it in front of the factory.

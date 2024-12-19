@@ -1,0 +1,17 @@
+M79 Grenade Launcher
+
+Ammo Capacity: 1 Shell
+Rate of Fire: 1 Shot per reload
+Damage: High w/ spread
+
+The M79 40mm grenade launcher is great
+for suppressive fire or clearing out those
+enemy bunkers. Don't count on having the
+grenades sail forever though, as they have a
+limited range. Also, one should be careful
+where he fires, as the grenades can kill the 
+wielder too.
+
+Primary fire fires shells which explode on 
+contact, and secondary is a three second timed 
+grenade.

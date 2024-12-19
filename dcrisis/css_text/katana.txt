@@ -1,0 +1,16 @@
+Katana
+
+Damage: Medium
+
+The traditional weapon of the Samurai, and a
+common weapon on the battlefield of the
+future. Forged with modern alloys and
+sharpened with modern techniques, these blades
+have proven themselves very useful in 
+hand-to-hand combat.
+
+Secondary attack will throw the sword, which
+can cause damage to an enemy who is just out
+of your reach. But be careful, because they can 
+pick the sword up easily if you miss, leaving you
+without one.

@@ -1,0 +1,20 @@
+Madhu is set in an area filled with many caves hidden
+in the sand. UP-KO has taken advantage of this and built
+a top secret chemical processing facility. The USA have learned
+of the location of this secret facility, and is on a mission to 
+destroy it to hamper UP-KO's production of chemicals.
+
+USA: You must first seize the armory tents in the desert that the
+UP-KO security watch force is stationed at. Once these have been captured
+the doors to the mines can be opened by the laptop in the tents. Next you
+must take out the SAM site on the cliffs above the sand. To destroy the SAM
+site you must hack the computer on the SAM to enable the self-destruct 
+sequence. Once the SAM is destroyed, you must make your way down into the caves
+to the processing facility. Once there, initiate the self-destruct sequence
+and RUN.
+
+UP-KO: Prevent USA from destroying the processing facility.
+
+Map by Seraph
+Entities by LPlasma
+Textures by Valve, and the DC staff

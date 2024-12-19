@@ -1,0 +1,27 @@
+Kinetica is a map set in a city environment. USA is
+trying to infiltrate an UP-KO skyscraper and steal
+weapon's technology. Unfortunately, there is a security
+radar system involving radar systems with a satellite uplink,
+and a series of SAMs defending the building. This means
+that USA has to go an alternate route.
+
+First, USA must turn off the energy shields protecting the
+satellites (UP-KO can turn these BACK on), then if the shields
+are off, they can destroy the uplink satellites. Next, they must
+secure a nearby club as a base of operations (do this by standing
+on the DJ stand). Once that is taken care of, the generator for
+the SAM site must be disabled so the SAMs can be disabled. After
+that, the skyscraper is approachable, and USA must get the weapon
+at the top. To get up to the top, USA has to disable the security
+so the elevators will work, UP-KO can turn this security back on.
+Once USA has the weapon, they win.
+
+For UP-KO to win the map, they have to hold off USA, some of the previously
+mentioned objectives are reversible, so be sure to take that into
+account.
+
+dc_kinetica
+Map by LPlasma
+Entities by LPlasma
+Elevator Entities by DOOManiac and Ikkyo
+Textures by LPlasma, Valve, and the DC staff

@@ -1,0 +1,20 @@
+Heavy Armor
+
+Protection: Excellent
+Speed: Slow
+
+Restrictions:
+-No Walljumps or Flips
+-No Stealth
+-No Extra Speed
+-No Wootastic
+
+Heavy armor is the ultimate in modern protection, 
+and the most armor any sane person would want to 
+wear. Those in the armor can sustain a large amount
+of damage even before they start feeling it.
+
+Unfotunately, the tremendous weight of such armor
+causes the user to move very slowly, leaving
+more vulnerable parts of the body, such as the
+head, easy targets for accurate weapons.

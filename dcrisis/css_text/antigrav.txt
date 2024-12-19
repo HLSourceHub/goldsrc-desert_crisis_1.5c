@@ -1,0 +1,12 @@
+Antigrav System
+
+This enables the user to jump over buildings
+in a single bound, among other things. When
+activated with one's item key, it enhances the
+jumping ability of the user and eliminates
+damage incurred when impacting the ground at
+high speeds.
+
+All of this takes energy though, so the meter
+must be monitored closely. The meter takes
+time to recharge once depleted.
